@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hack Planner App: Edit</title>
+  </head>
+  <body>
+    <h1>Edit item</h1>
+    <div class="container">
+      <form action="/edit/{{ item_id }}" method="post">
+        <input type="text" name="item" value="{{ item }}" />
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </body>
+</html>
