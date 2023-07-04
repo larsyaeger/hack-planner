@@ -2,11 +2,16 @@
 <html>
   <head>
     <title>Hack Planner App: Edit</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='styles.css')}}"
+    />
   </head>
   <body>
     <h1>Edit item</h1>
     <div class="container">
-      <form action="/edit/{{ item_id }}" method="post">
+      <form class="edit-form" action="/edit/{{ item_id }}" method="post">
         <input type="text" name="item" value="{{ item }}" />
         <button type="submit">Save</button>
       </form>

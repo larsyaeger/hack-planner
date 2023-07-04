@@ -2,21 +2,28 @@
 <html>
   <head>
     <title>Hack Planner App</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='styles.css')}}"
+    />
   </head>
   <body>
-    <h1>Hack Planner</h1>
-    <ul>
-      {% for item in items %}
-      <li>
-        {{item}}
-        <a href="/edit/{{ loop.index }}">Edit</a>
-        <a href="/delete/{{ loop.index }}">Delete</a>
-      </li>
-      {% endfor %}
-    </ul>
-    <form action="/add" method="post">
-      <input type="text" name="item" placeholder="Enter item" />
-      <button type="submit">Add</button>
-    </form>
+    <div class="container">
+      <h1>Hack Planner</h1>
+      <ul>
+        {% for item in items %}
+        <li>
+          {{item}}
+          <a href="/edit/{{ loop.index }}">Edit</a>
+          <a href="/delete/{{ loop.index }}">Delete</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <form class="add-form" action="/add" method="post">
+        <input type="text" name="item" placeholder="Enter item" />
+        <button type="submit">Add</button>
+      </form>
+    </div>
   </body>
 </html>
